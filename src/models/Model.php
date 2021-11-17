@@ -26,9 +26,9 @@ class Model {
         $this->values[$key] = $value;
     }
 
-    public static function get($filters = [], $coluns = '*'){
+    public static function get($filters = [], $columns = '*'){
         $objects = [];
-        $result = static::getResultSetFromSelect($filters, $columns = '*');
+        $result = static::getResultSetFromSelect($filters, $columns);
         if($result){
             $class = get_called_class(); // nome da classe que chamou esta função. No caso User
             while($row = $result->fetch_assoc()){
