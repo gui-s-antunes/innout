@@ -1,7 +1,4 @@
 <?php
-
-require_once(realpath(MODEL_PATH . '/Model.php'));
-
 class User extends Model {
     // o código abaixo ajuda a pegar o banco de dados e manipular crud
     protected static $tableName = 'users';
