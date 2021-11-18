@@ -39,9 +39,15 @@ class Model {
         return $objects;
     }
 
+    public static function getOne($filters = [], $columns = '*'){
+        $class = get_called_class();
+        $result = static::getResultSetFromSelect($filters, $columns);
+        return $result ? new $class($result->fetch_assoc()) : null;
+    }
+
     public static function getResultSetFromSelect($filters = [], $columns = '*'){
         $sql = "SELECT ${columns} FROM " . static::$tableName . static::getFilters($filters);
-        echo 'Valor de coluna: ' . $columns . '<br>';
+        // echo 'Valor de coluna: ' . $columns . '<br>';
         $result = Database::getResultFromQuery($sql);
         if($result->num_rows === 0){
             return null;
