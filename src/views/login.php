@@ -25,11 +25,17 @@
                     <?php include(TEMPLATE_PATH . '/message.php'); ?>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="text" name='email' id="email" class="form-control" value="<?= $email ?>">
+                        <input type="text" name='email' id="email" class="form-control <?= isset($errors) ? ($errors['email'] ? 'is-invalid' : '') : '' ?>" value="<?= isset($email) ? $email : '' ?>">
+                        <div class="invalid-feedback">
+                            <?= isset($errors) ? $errors['email'] : '' ?>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="password">Senha</label>
-                        <input type="password" name='password' id="password" class="form-control">
+                        <input type="password" name='password' id="password" class="form-control <?= isset($errors) ? ($errors['email'] ? 'is-invalid' : '') : '' ?>">
+                        <div class='invalid-feedback'>
+                            <?= isset($errors) ? $errors['password'] : '' ?>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
