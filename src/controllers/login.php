@@ -8,8 +8,8 @@ if(count($_POST) > 0){
         $user = $login->checkLogin();
         echo "Usuário {$user->name} ok!";
     }
-    catch(Exception $e){
-        echo 'Login falhou :c';
+    catch(AppException $e){
+        echo $e->getMessage();
     }
 }
 
