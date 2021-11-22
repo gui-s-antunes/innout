@@ -5,6 +5,7 @@ setlocale(LC_TIME, 'pt_BR', 'pt_BR.uft-8', 'portuguese');
 
 define('MODEL_PATH', realpath(dirname(__FILE__) . '/../models')); // constantes das pastas do projeto
 define('VIEW_PATH', realpath(dirname(__FILE__) . '/../views'));
+define('TEMPLATE_PATH', realpath(dirname(__FILE__) . '/../views/template'));
 define('CONTROLLER_PATH', realpath(dirname(__FILE__) . '/../controllers'));
 define('EXCEPTION_PATH', realpath(dirname(__FILE__) . '/../exceptions'));
 

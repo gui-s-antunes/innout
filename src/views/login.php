@@ -12,6 +12,7 @@
     </head>
     <body>
         <form class='login-form' action="#" method="post">
+
             <div class="login-card card">
                 <div class="card-header">
                     <i class="icofont-travelling mr-2"></i>
@@ -21,6 +22,7 @@
                     <i class="icofont-runner-alt-1 ml-2"></i>
                 </div>
                 <div class="card-body">
+                    <?php include(TEMPLATE_PATH . '/message.php'); ?>
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <input type="text" name='email' id="email" class="form-control" value="<?= $email ?>">
