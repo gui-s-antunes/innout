@@ -5,8 +5,19 @@
 // ini_set('display_startup_erros',1);
 // error_reporting(E_ALL);
 require_once(dirname(__FILE__, 2) . '/src/config/config.php');
-require_once(CONTROLLER_PATH . '/login.php');
+// require_once(CONTROLLER_PATH . '/login.php');
+// require_once(CONTROLLER_PATH . '/day_records.php');
 // loadView('login', ['piece' => 'roger']);
+
+$uri = urldecode(
+    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) // o request do uri pega os parametros passados na url tb, e com parse_url pegamos apenas a url
+);
+
+if($uri === '/' || $uri === '' || $uri === '/index.php'){
+    $uri = '/login.php';
+}
+
+require_once(CONTROLLER_PATH . "/{$uri}");
 
 
 
