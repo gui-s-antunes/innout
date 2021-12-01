@@ -1,11 +1,11 @@
 <main class="content">
-    <div class="content-title mb-4">
-        <i class="icon icofont-check-alt mr-2"></i>
-        <div>
-            <h1>Registrar ponto</h1>
-            <h2>Mantenha seu ponto consistente</h1>
-        </div>
-    </div>
+    <?php
+        renderTitle(
+            'Registrar ponto',
+            'Mantenha seu ponto consistente!',
+            'icofont-check-alt'
+        );
+    ?>
     <div class="card">
         <div class="card-header">
             <h3>10 de Janeiro de 2020</h3>
