@@ -101,6 +101,13 @@ header.header .dropdown-content a:hover{
     background: rgba(0, 0, 0, .3);
 }
 
+header.header .avatar {
+    height: 70%;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
 
 aside.sidebar {
     grid-area: sidebar;
