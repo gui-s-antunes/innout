@@ -22,8 +22,8 @@ class Database{
         if(!mysqli_query($connection, $sql)){
             throw new Exception(mysqli_erro($conn));
         }
-        $id = $conn->insert_id;
-        $conn->close();
+        $id = $connection->insert_id;
+        $connection->close();
         return $id;
     }
 }
