@@ -20,7 +20,7 @@ class Database{
     public static function executeSQL($sql){
         $connection = self::getConnection();
         if(!mysqli_query($connection, $sql)){
-            throw new Exception(mysqli_erro($conn));
+            throw new Exception(mysqli_erro($connection));
         }
         $id = $connection->insert_id;
         $connection->close();
