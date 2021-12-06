@@ -16,4 +16,14 @@ class Database{
         $connection->close();
         return $result;
     }
+
+    public static function executeSQL($sql){
+        $connection = self::getConnection();
+        if(!mysqli_query($connection, $sql)){
+            throw new Exception(mysqli_erro($conn));
+        }
+        $id = $conn->insert_id;
+        $conn->close();
+        return $id;
+    }
 }
