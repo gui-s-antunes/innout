@@ -4,8 +4,6 @@
 // error_reporting(E_ALL);
 // este arquivo é para testes
 
-loadModel('WorkingHours'); // data_generator é um arquivo de testes, portanto colocaremos diretamente aqui o carregamento
-
 // reset db
 Database::executeSQL('DELETE FROM working_hours');
 Database::executeSQL('DELETE FROM users WHERE id > 5');
