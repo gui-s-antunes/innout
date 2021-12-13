@@ -82,7 +82,12 @@ class Model {
         if(count($filters) > 0){
             $sql .= ' WHERE 1 = 1';
             foreach($filters as $colunm => $value){
-                $sql .= " AND ${colunm} = " . static::getFormatedValue($value);
+                if($colunm === 'raw'){
+                    $sql .= " AND {$value}";
+                }
+                else{
+                    $sql .= " AND ${colunm} = " . static::getFormatedValue($value);
+                }
             }
         }
         return $sql;
