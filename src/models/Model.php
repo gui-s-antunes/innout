@@ -5,16 +5,24 @@ class Model {
     protected static $columns = [];
     protected $values = [];
 
-    function __construct($arr){
-        $this->loadFromArray($arr);
+    function __construct($arr, $sanitize = true){
+        $this->loadFromArray($arr, $sanitize);
     }
 
-    public function loadFromArray($arr){
+    public function loadFromArray($arr, $sanitize = true){
         if($arr) {
+            $connection = Database::getConnection();
             foreach($arr as $key => $value){
                 // $this->set($key, $value);
-                $this->$key = $value;
+                $cleanValue = $value;
+                if($sanitize && isset($cleanValue)){
+                    $cleanValue = strip_tags(trim($cleanValue)); // limpar tags html
+                    $cleanValue = htmlentities($cleanValue, ENT_NOQUOTES); // substituir entidades html
+                    $cleanValue = mysqli_real_escape_string($connection, $cleanValue); // prepare statement já trata, isto fica opctional
+                }
+                $this->$key = $cleanValue;
             }
+            $connection->close();
         }
     }
 
