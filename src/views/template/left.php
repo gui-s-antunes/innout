@@ -50,7 +50,7 @@
                 <span class="main text-danger" <?= $activeClock === 'exitTime' ? 'active-clock' : '' ?>>
                     <?= $exitTime ?>
                 </span>
-                <span class="label text-muted">Horas de saída</span>
+                <span class="label text-muted">Hora de saída</span>
             </div>
         </div>
     </div>
