@@ -5,7 +5,7 @@
             'Crie e atualize o usuário',
             'icofont-user'
         );
-        include(TEMPLATE_PATH . '/messages.php');
+        include(TEMPLATE_PATH . '/message.php');
     ?>
 
     <form action="#" method="post">
