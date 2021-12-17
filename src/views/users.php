@@ -6,7 +6,7 @@
             'icofont-users'
         );
 
-        include(TEMPLATE_PATH . '/messages.php');
+        include(TEMPLATE_PATH . '/message.php');
     ?>
 
     <a href="save_user.php" class="btn btn-lg btn-primary mb-2">Novo Usuário</a>
