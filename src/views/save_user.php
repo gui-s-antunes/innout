@@ -9,7 +9,9 @@
     ?>
 
     <form action="#" method="post">
-        <input type="hidden" name="id" value="<?= $id ?>">
+        <?php if(isset($id)): ?>
+            <input type="hidden" name="id" value="<?= $id ?>">
+        <?php endif ?>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="name">Nome</label>
